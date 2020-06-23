@@ -16,9 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      #- name: Checkout
-      #  run: git checkout
-
       - name: Find file
         run: find licence-data.php
         id: find
