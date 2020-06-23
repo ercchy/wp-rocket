@@ -23,7 +23,7 @@ jobs:
         run: find licence-data.php
 
       - name: Add a file
-        run: git checkout origin/master licence-data.php
+        run: git checkout master licence-data.php
         id: check
 
       - name: Commit the missing file
