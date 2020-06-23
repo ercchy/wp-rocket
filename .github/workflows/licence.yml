@@ -14,6 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
-      - name: Rebuild the licence-data.php file
-        run: git checkout -- licence-data.php && git commit licence-data.php -m "adds missing lincence-data.php file"
+          ref: ${GITHUB_REF##*/}
+          
+      - name: Checkout
+        run: git checkout 
+      
+      - name: Find file
+        run: find wp-rocket/licence-data.php
+          
+      - name: Add a file
+        run: git checkout origin/master licence-data.php 
+        id: check
+
+      - name: Commit the missing file
+        run: git commit -m "adds the file"
+    
