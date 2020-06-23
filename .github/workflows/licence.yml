@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
+          
+      - uses: actions/checkout@v2
+        with:
           ref: ${{ github.GITHUB_REF }}
 
       #- name: Checkout
@@ -25,7 +29,7 @@ jobs:
         continue-on-error: true
 
       - name: Add a file
-        run: git checkout origin/master licence-data.php
+        run: git checkout master licence-data.php
         id: add
         if: ${{ success() }}
 
