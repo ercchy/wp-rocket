@@ -14,18 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${GITHUB_REF##*/}
-          
+          ref: ${GITHUB_REF}
+
       - name: Checkout
-        run: git checkout 
-      
+        run: git checkout
+
       - name: Find file
         run: find wp-rocket/licence-data.php
-          
+
       - name: Add a file
-        run: git checkout origin/master licence-data.php 
+        run: git checkout origin/master licence-data.php
         id: check
 
       - name: Commit the missing file
         run: git commit -m "adds the file"
-    
+
