@@ -13,8 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.GITHUB_REF }}
+#        with:
+#          ref: ${{ github.GITHUB_REF }}
 
       #- name: Checkout
       #  run: git checkout
