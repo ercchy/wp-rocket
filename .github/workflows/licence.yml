@@ -16,11 +16,11 @@ jobs:
         with:
           ref: ${{ github.GITHUB_REF }}
 
-      - name: Checkout
-        run: git checkout
+      #- name: Checkout
+      #  run: git checkout
 
       - name: Find file
-        run: find wp-rocket/licence-data.php
+        run: find . licence-data.php
 
       - name: Add a file
         run: git checkout origin/master licence-data.php
