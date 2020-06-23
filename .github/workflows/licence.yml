@@ -15,5 +15,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
-      - name: Rebuild the licence-data.php file
-        run: git checkout -- licence-data.php && git commit licence-data.php -m "adds missing lincence-data.php file"
+          
+      - name: Check if the file is present
+        run: echo running on branch ${GITHUB_REF##*/}
+        id: check
+
+      - name: Checkout the missing file
+        run: git checkout -- licence-data.php
+    
