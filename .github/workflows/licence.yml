@@ -31,5 +31,6 @@ jobs:
         if: ${{ steps.add.outcome == 'success' }}
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: [auto-bot]Adds missing licence-data.php file
+          commit_message: Adds missing licence-data.php file
+          commit_user_name: WP-media GitHub Actions Bot
 
