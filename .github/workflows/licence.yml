@@ -19,8 +19,8 @@ jobs:
       #- name: Checkout
       #  run: git checkout
 
-#      - name: Find file
-#        run: find licence-data.php
+      - name: Find file
+        run: find licence-data.php
 
       - name: Add a file
         run: git checkout master licence-data.php
