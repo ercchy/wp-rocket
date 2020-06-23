@@ -21,10 +21,13 @@ jobs:
 
       - name: Find file
         run: find licence-data.php
+        id: find
+        continue-on-error: true
 
       - name: Add a file
         run: git checkout master licence-data.php
-        id: check
+        id: add
+        if: ${{ success() }}
 
       - name: Commit the missing file
         run: git commit -m "adds the file"
