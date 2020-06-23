@@ -8,9 +8,9 @@ on:
 
 jobs:
   licence:
-    
+
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Rebuild the licence-data.php file
         run: git checkout origin/master -- licence-data.php
@@ -34,9 +34,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-#    - name: Install dependencies
-#      if: steps.composer-cache.outputs.cache-hit != 'true'
-#      run: composer install --prefer-dist --no-progress --no-suggest
+    - name: Install dependencies
+      if: steps.composer-cache.outputs.cache-hit != 'true'
+      run: composer install --prefer-dist --no-progress --no-suggest
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
