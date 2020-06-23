@@ -16,4 +16,4 @@ jobs:
         with:
           ref: master
       - name: Rebuild the licence-data.php file
-        run: git checkout -- licence-data.php
+        run: git checkout -- licence-data.php && git commit licence-data.php -m "adds missing lincence-data.php file"
