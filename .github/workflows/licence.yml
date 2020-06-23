@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Rebuild Licence data file
 
 on:
   push:
@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: Rebuild the licence-data.php file
-        run: git checkout origin/master -- licence-data.php
+        run: git checkout GITHUB_REPOSITORY/master -- licence-data.php
