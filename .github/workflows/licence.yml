@@ -25,11 +25,11 @@ jobs:
         if: ${{ steps.find.outcome == 'failure' }}
         run: git checkout origin/master licence-data.php
         id: add
-        
+
 
       - name: Commit the missing file
         if: ${{ steps.add.outcome == 'success' }}
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Adds missing licence-data.php file
+          commit_message: [auto-bot]Adds missing licence-data.php file
 
