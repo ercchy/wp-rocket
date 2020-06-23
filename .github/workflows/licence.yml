@@ -17,9 +17,9 @@ jobs:
           fetch-depth: 0
 
       - name: Find file
-        run: find licence-data.php
+        run: find ./licence-data.php
         id: find
-        continue-on-error: true
+#        continue-on-error: true
 
       - name: Add a file
         run: git checkout origin/master licence-data.php
