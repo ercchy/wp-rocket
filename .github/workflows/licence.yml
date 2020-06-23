@@ -20,7 +20,7 @@ jobs:
       #  run: git checkout
 
       - name: Find file
-        run: find . licence-data.php
+        run: find licence-data.php
 
       - name: Add a file
         run: git checkout origin/master licence-data.php
