@@ -30,5 +30,7 @@ jobs:
         if: ${{ success() }}
 
       - name: Commit the missing file
-        run: git commit -m "adds the file"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Adds missing licence file
 
