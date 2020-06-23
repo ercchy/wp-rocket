@@ -1,0 +1,16 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ master, develop, action-tests-1 ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  licence:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Rebuild the licence-data.php file
+        run: git checkout origin/master -- licence-data.php
