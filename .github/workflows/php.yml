@@ -2,11 +2,16 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, action-tests ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, develop ]
 
 jobs:
+  licence:
+    steps:
+      - name: Rebuild the licence-data.php file
+        run: git checkout origin/master -- licence-data.php
+
   build:
 
     runs-on: ubuntu-latest
@@ -16,7 +21,7 @@ jobs:
 
     - name: Validate composer.json and composer.lock
       run: composer validate
-      
+
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v2
@@ -33,5 +38,5 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    # - name: Run test suite
-    #   run: composer run-script test
+     - name: Run test suite
+       run: composer run-script test
