@@ -8,6 +8,9 @@ on:
 
 jobs:
   licence:
+    
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Rebuild the licence-data.php file
         run: git checkout origin/master -- licence-data.php
