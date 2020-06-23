@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: Rebuild the licence-data.php file
-        run: git checkout GITHUB_REPOSITORY/master -- licence-data.php
+        run: git checkout GITHUB_REPOSITORY@master -- licence-data.php
